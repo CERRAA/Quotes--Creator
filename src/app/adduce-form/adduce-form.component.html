@@ -1,0 +1,27 @@
+
+<div class="container-fluid">
+    <h2 class="text-center">Generate a new Quote</h2>
+    <hr>
+    <form (ngSubmit)='submitGoal()' #goalForm="ngForm">
+         <div class="form-group">
+             <label for="adduce">Adduce</label>
+             <input type="text" required id="adduce" class="form-control" name="adduce" [(ngModel)]="anotherTask.adduce" #adduce="ngModel">
+             <div [hidden]="adduce.valid || adduce.pristine" class="alert alert-danger"></div>
+        </div>
+        <div class="form-group">
+             <label for="name">Name</label>
+             <input type="text" required id="name" class="form-control" name="name" [(ngModel)]="anotherTask.name" #name="ngModel">
+             <div [hidden]="name.valid || name.pristine" class="alert alert-danger"></div>
+        </div>
+        <div class="form-group">
+          <label for="description">Author</label>
+          <input type="text" required id="description" class="form-control" name="description"[(ngModel)]="anotherTask.author"  #description="ngModel">
+          <div [hidden]="description.valid || description.pristine" class="alert alert-danger"></div>
+     </div>
+     <div class="form-group">
+      <label for="final">Date of Completion</label>
+      <input type="date" required id="final" class="form-control">
+ </div>
+ <button type="submit" class="btn btn-info">Add Adduce</button>
+    </form>
+</div>

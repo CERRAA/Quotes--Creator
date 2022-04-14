@@ -1,0 +1,13 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+
+* {
+    color: aqua;
+    background-image: url("./assets/background.jpg");
+    background-repeat: no-repeat;
+
+
+}
+
+
+
+

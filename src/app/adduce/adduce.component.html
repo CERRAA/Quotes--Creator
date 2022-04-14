@@ -1,0 +1,32 @@
+<div class="container-fluid">
+    <h1 class="text-uppercase font-italic">ANGIE'S QUOTES</h1>
+    <hr>
+    <div class="row">
+        <div class="col-md-6  font-weight-light">
+          <div *ngFor='let adduce of adduces;let i = index'>
+            <div>
+              <h4 id={{i}} appStrikethrough>{{adduce.adduce}}</h4>
+              <button (click)='toggleDetails(i)' class="btn btn-dark">Toggle Details</button>
+            </div>
+         
+            
+            <div *ngIf="adduce.showDescription">
+                <h2>Author:{{adduce.author}}</h2>
+                <h2>Name:{{adduce.name}}  {{adduce.completeDate|date}}</h2>
+                <button (click)="increment(i)">Like</button>:<span>{{adduce.like}}</span>
+                <button (click)="decrement(i)">Dislike</button><span>{{adduce.dislike}}</span>
+                <app-adduce-details [adduce]="adduce" (isComplete)="deleteGoal($event,i)"></app-adduce-details>     
+            </div>
+              
+         </div>
+          </div>
+          <div class="col-md-6">
+             <app-adduce-form (addGoal)="addNewAdduce($event)"></app-adduce-form>
+          </div>
+        </div>
+        <div class="col-md-6">
+                 <!-- <app-adduce-form (addGoal)="addNewGoal($event)"></app-adduce-form> -->
+        </div>
+      </div>
+    
+ 
